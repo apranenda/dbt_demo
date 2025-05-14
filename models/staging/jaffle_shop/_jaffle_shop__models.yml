@@ -1,0 +1,32 @@
+models:
+  - name: stg_jaffle_shop__orders
+    description: Order details of customers
+    columns:
+      - name: id
+        data_type: int64
+        tests:
+          - not_null
+      - name: user_id
+        data_type: int64
+      - name: order_date
+        data_type: date
+      - name: status
+        data_type: string
+      - name: _etl_loaded_at
+        data_type: datetime
+        quote: true
+  - name: stg_jaffle_shop__customers
+    description: Customer details
+    columns:
+      - name: id
+        data_type: int64
+        tests:
+          - not_null
+      - name: first_name
+        data_type: string
+        tests:
+          - not_null
+      - name: last_name
+        data_type: string
+        tests:
+          - not_null
